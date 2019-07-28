@@ -2,7 +2,7 @@ import os
 import psycopg2
 
 from flask import Flask, render_template, url_for
-from flask sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
@@ -18,6 +18,10 @@ class Data_Base(db.Model):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/page_2')
+def page_2():
+	return render_template("random_page_2.html")
 
 @app.route('/view_database')
 def view_db():

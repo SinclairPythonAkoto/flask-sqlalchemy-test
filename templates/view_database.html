@@ -2,8 +2,12 @@
 
 {% block body %}
 
-<ul>
-	<li>{{ data }}</li>
-</ul>
+{% if data == None: %}
+	<ul>
+		<li>{{ data }}</li>
+	</ul>
+{% else %}
+	<p>Here is a random message!</p>
+{% endif %}
 
 {% endblock %}
