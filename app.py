@@ -25,9 +25,9 @@ def page_2():
 
 @app.route('/view_database')
 def view_db():
-	record = Data_Base.query.filter_by(info='Hello World!').first()
-	data = record.data
-	return render_template('view_database.html', data=data) # this works!
+	# record = Data_Base.query.filter_by(info='Hello World!').first()
+	# data = record.info
+	# return render_template('view_database.html', data=data) # this used to work but not anymore!
 
 	# should be below:
 	# record = Data_Base.query.filter_by(info='Hello World!').first()
@@ -41,9 +41,9 @@ def view_db():
 	# data = record.get.all()
 	# return render_template('view_database.html', data=data)
 
-	# record = Data_Base.query.all()
-	# data = record
-	# return render_template('view_database.html', data=data)
+	record = Data_Base.query.all()
+	data = record
+	return render_template('view_database.html', data=data)
 
 
 
