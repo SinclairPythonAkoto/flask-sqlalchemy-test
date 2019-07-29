@@ -2,12 +2,12 @@
 
 {% block body %}
 
-{% if data == None: %}
 	<ul>
 		<li>{{ data }}</li>
 	</ul>
-{% else %}
-	<p>Here is a random message!</p>
-{% endif %}
+<br>
+<br>
+<a href="{{ url_for('index') }}">Home</a>
+
 
 {% endblock %}

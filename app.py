@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 class Data_Base(db.Model):
 	__tablename__ = 'example'
 	id = db.Column('id', db.Integer, primary_key=True)
-	data = db.Column('data', db.String(50))
+	info = db.Column('data', db.String(50))
 
 @app.route('/')
 def index():
@@ -25,8 +25,19 @@ def page_2():
 
 @app.route('/view_database')
 def view_db():
-	data = Data_Base.query.all()
-	return render_template('view_database.html', data=data)
+	record = Data_Base.query.filter_by(info='Hello World!').first()
+	data = record.data
+	return render_template('view_database.html', data=data) # this works!
+
+	# record = Data_Base.query.all()
+	# record = record.query(id, info)
+	# data = record.get.all()
+	# return render_template('view_database.html', data=data)
+
+	# record = Data_Base.query.all()
+	# data = record
+	# return render_template('view_database.html', data=data)
+
 
 
 
