@@ -29,6 +29,13 @@ def view_db():
 	data = record.data
 	return render_template('view_database.html', data=data) # this works!
 
+	# should be below:
+	# record = Data_Base.query.filter_by(info='Hello World!').first()
+	# info = record.info
+	# return render_template('view_database.html', info=info) # this works!
+	# if you just want the info to print out, then change the data variable to info in index.html
+	# this should still work.
+
 	# record = Data_Base.query.all()
 	# record = record.query(id, info)
 	# data = record.get.all()
