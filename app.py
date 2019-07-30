@@ -23,6 +23,10 @@ def index():
 def page_2():
 	return render_template("random_page_2.html")
 
+@app.route('/hello')
+def hello():
+	return render_template('hello.html')
+
 @app.route('/view_database')
 def view_db():
 	# record = Data_Base.query.filter_by(info='Hello World!').first()
